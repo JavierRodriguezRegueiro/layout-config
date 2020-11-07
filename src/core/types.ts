@@ -1,0 +1,4 @@
+export const TYPES = {
+    LAYOUT_ITEM_CREATOR: Symbol.for("LAYOUT_ITEM_CREATOR"),
+    LAYOUT_ITEM_REPOSITORY: Symbol.for("LAYOUT_ITEM_REPOSITORY")
+}

@@ -21,6 +21,10 @@ export default class LayoutItem {
         this.name = name;
     }
 
+    getName(): string {
+        return this.name;
+    }
+
     setRows(rows: Row): void {
         this.rows = rows;
     }
