@@ -9,7 +9,7 @@ export default class Row {
     }
 
     private ensureIsValidRowValue(value: number): void {
-        if (value < 0) {
+        if (value < 0 || !Number.isInteger(value)) {
             throw new InvalidArgumentError(`<${this.constructor.name}> does not allow the value <${value}>`)
         }
     }
