@@ -2,15 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LayoutItemCreator from "../../core/LayoutItem/Application/LayoutItemCreator";
-import Column from "../../core/Shared/Domain/ValueObjects/Column";
-import Row from "../../core/Shared/Domain/ValueObjects/Row";
+import Column from "../../core/LayoutItem/Domain/Column";
+import Row from "../../core/LayoutItem/Domain/Row";
+import LayoutItemId from "../../core/LayoutItem/Domain/LayoutItemId";
 import {container} from '../confg/dependency-injection/inversify.config';
 import {TYPES} from "../../core/types";
 
 function App() {
   const click = async () => {
     const action: LayoutItemCreator = container.get<LayoutItemCreator>(TYPES.LAYOUT_ITEM_CREATOR)
-    await action.run("works!", new Row(5), new Column(5));
+    await action.run(new LayoutItemId(), "works!", new Row(5), new Column(5));
     console.log('Created');
   }
   return (

@@ -1,8 +1,9 @@
 import LayoutItemRepository from "../../../../core/LayoutItem/Domain/LayoutItemRepository";
 import LayoutItem from "../../../../core/LayoutItem/Domain/LayoutItem";
-import Row from "../../../../core/Shared/Domain/ValueObjects/Row";
-import Column from "../../../../core/Shared/Domain/ValueObjects/Column";
+import Row from "../../../../core/LayoutItem/Domain/Row";
+import Column from "../../../../core/LayoutItem/Domain/Column";
 import {injectable} from "inversify";
+import LayoutItemId from "../../../../core/LayoutItem/Domain/LayoutItemId";
 
 @injectable()
 export default class LayoutItemMockRepository implements LayoutItemRepository {
@@ -13,7 +14,7 @@ export default class LayoutItemMockRepository implements LayoutItemRepository {
     private readonly mockLayoutItems: LayoutItem[];
 
     constructor() {
-        this.mockLayoutItems = [new LayoutItem('Mock name', new Row(4), new Column(4))]
+        this.mockLayoutItems = [new LayoutItem(new LayoutItemId(), 'Mock name', new Row(4), new Column(4))]
     }
     getAll(): LayoutItem[] {
         this.mockGetAll()

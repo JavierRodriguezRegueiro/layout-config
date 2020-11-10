@@ -1,0 +1,3 @@
+import PositiveIntegerNumber from "../../Shared/Domain/ValueObjects/PositiveIntegerNumber";
+
+export default class Column extends PositiveIntegerNumber {}

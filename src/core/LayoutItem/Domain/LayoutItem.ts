@@ -1,20 +1,23 @@
-import Row from "../../Shared/Domain/ValueObjects/Row";
-import Column from "../../Shared/Domain/ValueObjects/Column";
+import Row from "./Row"
+import Column from "./Column";
+import LayoutItemId from "./LayoutItemId";
 
 export default class LayoutItem {
+    private id: LayoutItemId;
     private name: string;
     private rows: Row;
     private columns: Column;
 
 
-    constructor(name: string, rows: Row, columns: Column) {
+    constructor(id:LayoutItemId, name: string, rows: Row, columns: Column) {
+        this.id = id;
         this.name = name;
         this.rows = rows;
         this.columns = columns;
     }
 
-    static create(name: string, rows: Row, columns: Column): LayoutItem {
-        return new LayoutItem(name, rows, columns);
+    set getId(id: LayoutItemId) {
+        this.id = id;
     }
 
     setName(name: string): void {

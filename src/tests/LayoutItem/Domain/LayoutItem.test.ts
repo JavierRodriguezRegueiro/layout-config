@@ -1,6 +1,7 @@
 import LayoutItem from "../../../core/LayoutItem/Domain/LayoutItem";
-import Row from "../../../core/Shared/Domain/ValueObjects/Row";
-import Column from "../../../core/Shared/Domain/ValueObjects/Column";
+import Row from "../../../core/LayoutItem/Domain/Row";
+import Column from "../../../core/LayoutItem/Domain/Column";
+import LayoutItemId from "../../../core/LayoutItem/Domain/LayoutItemId";
 
 describe('LayoutItem Class', () => {
     const Mock = {
@@ -10,12 +11,14 @@ describe('LayoutItem Class', () => {
     }
     let rows: Row;
     let cols: Column;
+    let id: LayoutItemId;
     beforeAll(() => {
+        id = new LayoutItemId();
         rows = new Row(Mock.rows)
         cols = new Column(Mock.cols);
     })
     it('Should be created without error', () => {
-        const item: LayoutItem = new LayoutItem(Mock.name, rows, cols);
+        const item: LayoutItem = new LayoutItem(id, Mock.name, rows, cols);
         expect(item).not.toBeNull();
     })
 })

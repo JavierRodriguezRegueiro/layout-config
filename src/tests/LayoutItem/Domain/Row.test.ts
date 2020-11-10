@@ -1,5 +1,4 @@
-import Row from "../../../../core/Shared/Domain/ValueObjects/Row";
-import Column from "../../../../core/Shared/Domain/ValueObjects/Column";
+import Row from "../../../core/LayoutItem/Domain/Row";
 
 describe('Row class', () => {
     const Mock = {
@@ -15,6 +14,6 @@ describe('Row class', () => {
         expect(() => new Row(Mock.invalidValue)).toThrow(Error);
     })
     it('Should throw an error when the value is not an integer', () => {
-        expect(() => new Column(Mock.realNumberInvalidValue)).toThrow(Error);
+        expect(() => new Row(Mock.realNumberInvalidValue)).toThrow(Error);
     })
 })

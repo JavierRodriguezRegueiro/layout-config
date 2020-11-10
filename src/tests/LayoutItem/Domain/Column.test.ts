@@ -1,4 +1,4 @@
-import Column from "../../../../core/Shared/Domain/ValueObjects/Column";
+import Column from "../../../core/LayoutItem/Domain/Column";
 
 describe('Column class', () => {
     const Mock = {
