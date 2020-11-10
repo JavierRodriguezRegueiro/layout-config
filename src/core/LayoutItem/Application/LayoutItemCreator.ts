@@ -7,11 +7,16 @@ import LayoutItemRepository from "../Domain/LayoutItemRepository";
 import UserCase from "../../Shared/Domain/UserCase/UserCase";
 
 @injectable()
-export default class LayoutItemCreator implements UserCase<void, {name: string, rows: Row, cols: Column}>{
+export default class LayoutItemCreator implements UserCase{
     @inject(TYPES.LAYOUT_ITEM_REPOSITORY)
     private repository: LayoutItemRepository
 
-    async run({name, rows, cols}: {name: string, rows: Row, cols: Column}): Promise<void> {
+
+    async run(name: string, rows: Row, cols: Column): Promise<void> {
         this.repository.save(new LayoutItem(name, rows, cols));
+    }
+
+    getRepository(): LayoutItemRepository {
+        return this.repository;
     }
 }

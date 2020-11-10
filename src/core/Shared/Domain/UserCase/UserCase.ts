@@ -1,3 +1,3 @@
-export default interface UserCase<T = void, P = void> {
-    run(param: P): Promise<T>;
+export default interface UserCase {
+    getRepository(): any;
 }

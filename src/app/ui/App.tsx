@@ -10,12 +10,7 @@ import {TYPES} from "../../core/types";
 function App() {
   const click = async () => {
     const action: LayoutItemCreator = container.get<LayoutItemCreator>(TYPES.LAYOUT_ITEM_CREATOR)
-    const obj = {
-      name: "works!",
-      rows: new Row(5),
-      cols: new Column(5)
-    }
-    await action.run(obj);
+    await action.run("works!", new Row(5), new Column(5));
     console.log('Created');
   }
   return (

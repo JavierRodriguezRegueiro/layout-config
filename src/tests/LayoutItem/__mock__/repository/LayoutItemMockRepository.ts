@@ -2,7 +2,9 @@ import LayoutItemRepository from "../../../../core/LayoutItem/Domain/LayoutItemR
 import LayoutItem from "../../../../core/LayoutItem/Domain/LayoutItem";
 import Row from "../../../../core/Shared/Domain/ValueObjects/Row";
 import Column from "../../../../core/Shared/Domain/ValueObjects/Column";
+import {injectable} from "inversify";
 
+@injectable()
 export default class LayoutItemMockRepository implements LayoutItemRepository {
     private mockGetAll = jest.fn();
     private mockGetByName = jest.fn();

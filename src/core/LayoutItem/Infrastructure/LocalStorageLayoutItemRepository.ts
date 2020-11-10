@@ -18,6 +18,10 @@ export default class LocalStorageLayoutItemRepository implements LayoutItemRepos
     }
 
     save(item: LayoutItem): void {
-        window.localStorage.setItem(item.getName(), JSON.stringify(item))
+        let layouts: Array<LayoutItem> = window.localStorage.getItem('layouts') ?
+            JSON.parse(<string>window.localStorage.getItem('layouts')):
+            [];
+        layouts.push(item)
+        window.localStorage.setItem('layouts', JSON.stringify(layouts));
     }
 }

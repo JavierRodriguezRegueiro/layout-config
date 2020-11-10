@@ -2,9 +2,9 @@ import Row from "../../Shared/Domain/ValueObjects/Row";
 import Column from "../../Shared/Domain/ValueObjects/Column";
 
 export default class LayoutItem {
-    name: string;
-    rows: Row;
-    columns: Column;
+    private name: string;
+    private rows: Row;
+    private columns: Column;
 
 
     constructor(name: string, rows: Row, columns: Column) {
