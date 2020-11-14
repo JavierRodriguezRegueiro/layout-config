@@ -7,7 +7,9 @@ import LayoutItemId from "../Domain/LayoutItemId";
 @injectable()
 export default class LocalStorageLayoutItemRepository implements LayoutItemRepository {
     getAll(): LayoutItem[] {
-        return [];
+        return window.localStorage.getItem('layouts') ?
+            JSON.parse(window.localStorage.getItem('layouts') as string):
+            [];
     }
 
     getByName(name: string): LayoutItem {
